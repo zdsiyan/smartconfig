@@ -18,11 +18,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.List;
+
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import com.github.zdsiyan.maven.plugin.smartconfig.Configurator;
 
-import com.alibaba.fastjson.JSONPath;
+import com.github.zdsiyan.maven.plugin.smartconfig.Configurator;
 import com.github.zdsiyan.maven.plugin.smartconfig.model.PointHandle;
 
 /**
@@ -38,12 +38,14 @@ public class PropertyConfigurator implements Configurator {
     try {
       PropertiesConfiguration configuration = new PropertiesConfiguration();
       configuration.load(in, charset.name());
-
+      
       pointhandles.forEach(point ->{
     	  switch(point.getMode()){
 			case insert:
+				configuration.addProperty(point.getExpression(), point.getValue());
 				break;
 			case delete:
+				configuration.setProperty(point.getExpression(), "");
 				break;
 	  		case replace:
 	  		default:

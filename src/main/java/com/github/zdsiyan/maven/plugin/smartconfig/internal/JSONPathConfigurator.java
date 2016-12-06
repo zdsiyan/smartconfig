@@ -47,9 +47,11 @@ public class JSONPathConfigurator implements Configurator {
     	switch(point.getMode()){
 			case insert:
 				//jsonObject.put(path, point.getValue());
+				path.set(json, point.getValue());
 				break;
 			case delete:
 				//jsonObject.remove(path);
+				path.set(json, "");
 				break;
     		case replace:
     		default:

@@ -42,7 +42,7 @@ public class BasicProcessor extends Processor {
       ByteArrayOutputStream out = configurator.execute(in, charset, configFile.getPointHandles());
       writeToFile(configFile.getFile(), out);
     } catch (IOException e) {
-      throw new FastconfigException(configFile.toString(), e);
+      throw new SmartconfigException(configFile.toString(), e);
     }
   }
 
