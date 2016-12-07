@@ -18,6 +18,8 @@
 	<packaging>maven-plugin</packaging>
 
 	<name>Smartconfig Maven Plugin</name>
+	<description>a maven plugin for config text file</description>
+	<url>https://github.com/zdsiyan/smartconfig</url>
 
 	<licenses>
 		<license>
@@ -32,6 +34,13 @@
 		<name>BruceZhang</name>
 		<url>http://www.github.com/zdsiyan</url>
 	</organization>
+	
+	<developers>
+        <developer>
+            <name>BruceZhang</name>
+            <email>zdsqqher@163.com</email>
+        </developer>
+    </developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
