@@ -170,6 +170,12 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<!-- 
+				mvn release:clean
+				mvn release:rollback
+				mvn release:prepare
+				mvn release:perform
+				 -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5.3</version>
